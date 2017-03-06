@@ -75,7 +75,11 @@ namespace BreweryDB.Tests
             Assert.IsTrue(response.TotalResults >= 6);
 
             var beer = response.Data.FirstOrDefault();
-            Assert.IsNotNull(beer);
+            Assert.IsNotNull(beer); //rating will be default
+
+            await Task.Delay(5000);
+
+            var test = "test"; // rating will have been looked up by now
         }
 
         [Test()]
